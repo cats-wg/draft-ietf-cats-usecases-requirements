@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-10-15T00:57:46.513015+00:00",
+  "timestamp": "2023-10-17T00:54:30.122698+00:00",
   "repo": "cats-wg/draft-ietf-cats-usecases-requirements",
   "labels": [
     {
@@ -113,6 +113,89 @@
               "body": "Sorry, typo. I copied the digital twin first paragraph to follow the format. Forgot to delete",
               "createdAt": "2023-10-13T03:31:10Z",
               "updatedAt": "2023-10-13T03:31:10Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOKfPAms5c6LsS",
+      "title": "Update draft-ietf-cats-usecases-requirements.md",
+      "url": "https://github.com/cats-wg/draft-ietf-cats-usecases-requirements/pull/2",
+      "state": "OPEN",
+      "author": "bpatient78",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Update Introduction, Terminologies and part of requirements. 1)The introduction part has been rewritten to avoid some verbose description. 2)Recent update on the definition of service related terms has been added into the Terminology part, as well as the definition on \"network edge\" and \"edge computing\", in order to make clarification. 3)Requirements on \"service instance selection\" have been adjusted. 4)Some vague expressions like\"quickly select\" and \"flexible use\" have been modified or explained. 5)Requirement on \"metric collection\" has been added. 6)Requirements on \"Session and service continuity\" have been modified.",
+      "createdAt": "2023-10-16T14:44:46Z",
+      "updatedAt": "2023-10-16T15:20:14Z",
+      "baseRepository": "cats-wg/draft-ietf-cats-usecases-requirements",
+      "baseRefName": "main",
+      "baseRefOid": "17811e95cd6e130e93ad3bd4daf553721947696f",
+      "headRepository": "bpatient78/draft-ietf-cats-usecases-requirements",
+      "headRefName": "patch-2",
+      "headRefOid": "ef6050ad524e9df3e5557d4fb29dbef4ac73eba3",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKfPAms5kJu8Q",
+          "commit": {
+            "abbreviatedOid": "ef6050a"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2023-10-16T15:13:48Z",
+          "updatedAt": "2023-10-16T15:20:14Z",
+          "comments": [
+            {
+              "originalPosition": 72,
+              "body": "```suggestion\r\n     approach {{?I-D.ietf-teas-rfc3272bis}} that takes into account the\r\n```",
+              "createdAt": "2023-10-16T15:13:49Z",
+              "updatedAt": "2023-10-16T15:20:14Z"
+            },
+            {
+              "originalPosition": 85,
+              "body": "```suggestion\r\n        Functions (SFs)) {{?RFC7665}}.\r\n```",
+              "createdAt": "2023-10-16T15:14:23Z",
+              "updatedAt": "2023-10-16T15:20:14Z"
+            },
+            {
+              "originalPosition": 99,
+              "body": "```suggestion\r\n        constitutes a service instance.\r\n        \r\nService contact instance:\r\n:  A client-facing service function instance\r\n      that is responsible for receiving requests in the context of a\r\n      given service.  A service request is processed according to the\r\n      service logic (e.g., handle locally or solicit backend resources).\r\n      Steering beyond the service contact instance is hidden to both\r\n      clients and CATS components.\r\n\r\n : A service contact instance is reachable via at least one Egress\r\n      CATS Forwarder.\r\n\r\n: A service can be accessed via multiple service contact instances\r\n      running at the same or different locations (service sites).\r\n\r\n: The same service contact instance may dispatch service requests to\r\n      one or more service instances (e.g., an instance that behaves as a\r\n      service load-balancer).\r\n```",
+              "createdAt": "2023-10-16T15:16:35Z",
+              "updatedAt": "2023-10-16T15:20:14Z"
+            },
+            {
+              "originalPosition": 63,
+              "body": "Add a mention that the terminology echoes what is draft-ldbc-cats-framework.",
+              "createdAt": "2023-10-16T15:17:24Z",
+              "updatedAt": "2023-10-16T15:20:14Z"
+            },
+            {
+              "originalPosition": 224,
+              "body": "not sure what is meant by \"dimensions\" here.",
+              "createdAt": "2023-10-16T15:18:11Z",
+              "updatedAt": "2023-10-16T15:20:14Z"
+            },
+            {
+              "originalPosition": 250,
+              "body": "I don't parse this requirement",
+              "createdAt": "2023-10-16T15:19:10Z",
+              "updatedAt": "2023-10-16T15:20:14Z"
+            },
+            {
+              "originalPosition": 148,
+              "body": "I would maintain the old formatting.\r\n\r\n```suggestion\r\n   R1:\r\n   : MUST provide a discovery and resolving methodology for the\r\n```",
+              "createdAt": "2023-10-16T15:20:06Z",
+              "updatedAt": "2023-10-16T15:20:14Z"
             }
           ]
         }

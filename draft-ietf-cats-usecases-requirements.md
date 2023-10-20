@@ -770,6 +770,161 @@ informative:
    WAN1 -> Cloud2 vCPE1 -> Cloud2 APP1
 
 
+##  Computing-Aware AI large model
+   
+   AI large model refers to a type of artificial intelligence model that 
+   is trained on massive amounts of data using deep learning techniques 
+   (https://www.merantix.com/blog/the-significance-of-ai-models#:~:text=Large%20AI%20Models%2C%20also%20known,are%20used%20to%20build%20them). 
+   These models are characterized by their large size, high complexity, 
+   and high computational requirements. 
+   
+   There are two types of AI large models, AI foundation model 
+   and customized model. AI foundation large model is a model that can 
+   handle multiple tasks and domains, and has wider applicability and 
+   flexibility, but may not perform as well as customized model in 
+   specific domain tasks. Customized models are trained for specific 
+   industries or domains, and more focused on solving specific problems, 
+   but may not be applicable to other domains. AI foundation models
+   usually involve mega-scale parameters, while customized models involve 
+   large or middle-scale parameters.
+   
+   Also, AI large model involves two key phases: training and inference. 
+   Training refers to the process of developing an AI model by feeding it 
+   with large amounts of data and optimizing it to learn and improve its 
+   performance. Training has high demand on computing and memory resource. 
+   On the other hand, inference is the process of using the trained AI model 
+   to make predictions or decisions based on new input data. Inference 
+   focuses more on the balance between computing resource, latency and power 
+   cost.
+   
+   There are mainly four types of AI tasks: 
+   - Text: text-to-text (conversation), text classification (e.g. sentiment analysis).
+   - Vision: image classification (label images), object detection.
+   - Audio: speech-to-text, text-to-speech.
+   - Multimodal: text-to-image, image-to-text, text-to-video, image-to-image, image-to-video, etc.
+    
+   Vison, audio, multimodal tasks often bring on high demand on network 
+   resource and computing resource.
+
+   There are two AI large model deployment cases that will benefit from the 
+   dynamic selection of service instances and the traffic steering.
+
+   {{fig-5}} shows the Cloud-edge co-inference AI model deployment. It can 
+   achieve low latency as the AI inference is deployed near to device. And 
+   it requires low demand on device resources. But when handling AI inference 
+   tasks, if traffic load between device and edge is high or edge computing 
+   resource is overloaded, traffic steering is needed to ensure the QoS.
+
+~~~~
+                         Training + Inference
+         +------------------------------------------------------+
+         |                                                      |
+         |                       Cloud                          |
+         |                                                      |
+         |                 +------------------+                 |
+         |                 | Foundation Model |                 |
+         |                 +------------------+                 |
+         +--------------------------+---------------------------+
+                                    |
+                                    |     Training + Inference
+       +----------------------------+-----------------------------+
+       |  +--------------+  +--------------+   +--------------+   |
+       |  |     Edge     |  |     Edge     |   |     Edge     |   |
+       |  | +----------+ |  | +----------+ |   | +----------+ |   |
+       |  | |Customized| |  | |Customized| |   | |Customized| |   |
+       |  | |  Models  | |  | |  Models  | |   | |  Models  | |   |
+       |  | +----------+ |  | +----------+ |   | +----------+ |   |
+       |  +--------------+  +--------------+   +--------------+   |
+       +----------+-----------------+---------------+-------------+
+                  |                 |               |
+                  |                 |               |
+             +----+---+        +----+---+       +---+----+
+             | Device |        | Device |   ... | Device |
+             +--------+        +--------+       +--------+
+~~~~
+{: #fig-5 title="Cloud-edge co-inference" artwork-align="center"}
+
+   {{fig-6}} shows the Cloud-edge-device co-inference AI model deployment. 
+   It is a more flexible deployment (also more complex). It can achieve low 
+   latency as the AI inference is deployed locally or near to device. And 
+   device can work when edge isn’t available. Careful consideration to 
+   ensure that edge will only be used when the trade-offs are right. Similar 
+   to Cloud-edge co-inference AI model deployment, traffic steering is needed.
+
+~~~~
+                          Training + Inference
+         +------------------------------------------------------+
+         |                                                      |
+         |                       Cloud                          |
+         |                                                      |
+         |                 +------------------+                 |
+         |                 | Foundation Model |                 |
+         |                 +------------------+                 |
+         +--------------------------+---------------------------+
+                                    |
+                                    |     Training + Inference
+       +----------------------------+-----------------------------+
+       |  +--------------+  +--------------+   +--------------+   |
+       |  |     Edge     |  |     Edge     |   |     Edge     |   |
+       |  | +----------+ |  | +----------+ |   | +----------+ |   |
+       |  | |Customized| |  | |Customized| |   | |Customized| |   |
+       |  | |  Models  | |  | |  Models  | |   | |  Models  | |   |
+       |  | +----------+ |  | +----------+ |   | +----------+ |   |
+       |  +--------------+  +--------------+   +--------------+   |
+       +----------+-----------------+---------------+-------------+
+                  |                 |                  |
+                  |                 |                  |
+             +----+-----+      +----+-----+       +----+-----+
+             |  Device  |      |  Device  |   ... |  Device  |
+             | +------+ |      | +------+ |       | +------+ |
+             | |Pruned| |      | |Pruned| |       | |Pruned| |
+             | |Model | |      | |Model | |       | |Model | |
+             | +------+ |      | +------+ |       | +------+ |              
+             +----------+      +----------+       +----------+
+               Inference         Inference          Inference
+~~~~
+{: #fig-6 title="Cloud-edge-device co-inference" artwork-align="center"}  
+
+   {{fig-7}} shows the Edge inference AI model deployment. 
+   In this case, the customized model is deployed on the edge and device 
+   is requesting the customized model's AI inference service. So, the edge 
+   can infer by its own without the cloud. It can achieve low latency 
+   as the AI inference is deployed near to device. And it requires low 
+   demand on device resources. But when handling AI inference tasks, if 
+   traffic load between device and edge is high or edge computing resource
+   is overloaded, traffic steering is needed to ensure the QoS.
+
+~~~~
+                           Training + Inference
+       +----------------------------------------------------------+
+       |  +--------------+  +--------------+   +--------------+   |
+       |  |     Edge     |  |     Edge     |   |     Edge     |   |
+       |  | +----------+ |  | +----------+ |   | +----------+ |   |
+       |  | |Customized| |  | |Customized| |   | |Customized| |   |
+       |  | |  Models  | |  | |  Models  | |   | |  Models  | |   |
+       |  | +----------+ |  | +----------+ |   | +----------+ |   |
+       |  +--------------+  +--------------+   +--------------+   |
+       +----------+-----------------+---------------+-------------+
+                  |                 |               |
+                  |                 |               |
+             +----+---+        +----+---+       +---+----+
+             | Device |        | Device |   ... | Device |
+             +--------+        +--------+       +--------+
+~~~~
+{: #fig-7 title="Edge inference" artwork-align="center"}  
+
+   Many AI tasks brings on high demand on network resource and computing resource: 
+   vison, audio, multimodal. Also, it is common that same customized model is 
+   deployed in multiple edge sites to achieve load balance and high reliability.
+
+   The edge site’s computing resource and network info should be collectively 
+   considered to make suitable traffic steering decision. For example, if the 
+   available computing resource in nearest edge site is low, the traffic of AI 
+   tasks should be steered to another edge with high resource. Also, if multiple 
+   AI tasks, delay-sensitive task (live streaming with AI-generated avatar) and 
+   delay-tolerant task (text-to-image) arrive in edge, delay-tolerate task should 
+   be steered to another edge if the nearest edge’s resource is limited.
+
 #  Requirements
 
    In the following, we outline the requirements for the CATS system to

@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-10-19T00:54:05.396104+00:00",
+  "timestamp": "2023-10-22T00:57:45.768908+00:00",
   "repo": "cats-wg/draft-ietf-cats-usecases-requirements",
   "labels": [
     {
@@ -63,13 +63,13 @@
       "labels": [],
       "body": "Add use case of Computing-Aware AI large model, based on the discussion during IETF 117.",
       "createdAt": "2023-10-12T10:49:21Z",
-      "updatedAt": "2023-10-18T18:43:42Z",
+      "updatedAt": "2023-10-20T10:34:37Z",
       "baseRepository": "cats-wg/draft-ietf-cats-usecases-requirements",
       "baseRefName": "main",
       "baseRefOid": "17811e95cd6e130e93ad3bd4daf553721947696f",
       "headRepository": "QingAn/draft-ietf-cats-usecases-requirements",
       "headRefName": "patch-1",
-      "headRefOid": "2a8abf6dd9ee921e89082d14100a9e47cf77ab1f",
+      "headRefOid": "dd8aad958562b490009a01dbaa7fc494e3020996",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -88,6 +88,20 @@
           "body": "> > It looks to me Fig 5 & 6 both are co-interence model. Does that mean, the remote cloud side always plays the key role?\r\n> \r\n> During the inference, if the customized model is deployed on the edge and device is requesting the customized model's AI inference service, then the edge itself will be the key. If device is requesting the foundation model's AI inference service, then remote cloud side will be the key.\r\n> \r\n> > Curious to know, which is the most affecting contributor to inference, from device to edge or from edge to the cloud in terms of delay/bandwidth/computing resources? Would edge do the work alone without the help from the cloud side?\r\n> \r\n> Similarly, if the customized model is deployed on the edge and device is requesting the customized model's AI inference service, then the edge can work independently.\r\n\r\nSo there is a third scenario in which the edge can inference by its own without the cloud. It seems to me this scenario is the most suitable one for the CATS. Can you add a third figure to demonstrate it?  And add the explanation text too.\r\n\r\nBy permutation, I wonder is there a scenario in which device and edge co-inference without the cloud? ",
           "createdAt": "2023-10-18T13:20:14Z",
           "updatedAt": "2023-10-18T13:20:14Z"
+        },
+        {
+          "author": "QingAn",
+          "authorAssociation": "NONE",
+          "body": "> Thanks for this contrib.\r\n> \r\n> I would shorten the \"generic introductory part\" but focus more on CATS-specific matters and highlight what is unique to the IA-as-an-app. Thanks.\r\n\r\nThanks for the comments. I have made the update and also some reply to your comment. Please take a look.",
+          "createdAt": "2023-10-19T07:37:29Z",
+          "updatedAt": "2023-10-19T07:37:29Z"
+        },
+        {
+          "author": "QingAn",
+          "authorAssociation": "NONE",
+          "body": "> So there is a third scenario in which the edge can inference by its own without the cloud. It seems to me this scenario is the most suitable one for the CATS. Can you add a third figure to demonstrate it? And add the explanation text too.\r\n\r\nDone. Please take a look.\r\n\r\n> \r\n> By permutation, I wonder is there a scenario in which device and edge co-inference without the cloud?\r\n\r\nFrankly, I hadn't considered this scenario before. But theoretically, it is possible.\r\n",
+          "createdAt": "2023-10-19T07:55:26Z",
+          "updatedAt": "2023-10-19T07:55:26Z"
         }
       ],
       "reviews": [
@@ -205,6 +219,246 @@
               "updatedAt": "2023-10-18T18:43:42Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOKfPAms5ki8w5",
+          "commit": {
+            "abbreviatedOid": "2a8abf6"
+          },
+          "author": "QingAn",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-19T07:06:15Z",
+          "updatedAt": "2023-10-19T07:06:15Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "Actually, it is not a direct citation, but a rewording of several citations, including:\r\n\r\n- https://www.merantix.com/blog/the-significance-of-ai-models#:~:text=Large%20AI%20Models%2C%20also%20known,are%20used%20to%20build%20them.\r\n- https://aws.amazon.com/cn/blogs/aws/generative-ai-with-large-language-models-new-hands-on-course-by-deeplearning-ai-and-aws/#:~:text=Generative%20AI%20is%20powered%20by,across%20many%20natural%2Dlanguage%20tasks.\r\n- https://techcommunity.microsoft.com/t5/ai-machine-learning-blog/training-large-models-in-azure-machine-learning/ba-p/3834865\r\n\r\nIs it ok to list several citation links?",
+              "createdAt": "2023-10-19T07:06:15Z",
+              "updatedAt": "2023-10-19T07:06:15Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfPAms5ki97_",
+          "commit": {
+            "abbreviatedOid": "2a8abf6"
+          },
+          "author": "QingAn",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-19T07:09:16Z",
+          "updatedAt": "2023-10-19T07:09:16Z",
+          "comments": [
+            {
+              "originalPosition": 11,
+              "body": "Agree and deleted.",
+              "createdAt": "2023-10-19T07:09:16Z",
+              "updatedAt": "2023-10-19T07:09:16Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfPAms5ki-eA",
+          "commit": {
+            "abbreviatedOid": "2a8abf6"
+          },
+          "author": "QingAn",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-19T07:10:36Z",
+          "updatedAt": "2023-10-19T07:10:37Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "Agree to delete \"usually\".",
+              "createdAt": "2023-10-19T07:10:37Z",
+              "updatedAt": "2023-10-19T07:10:37Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfPAms5kjD46",
+          "commit": {
+            "abbreviatedOid": "2a8abf6"
+          },
+          "author": "QingAn",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-19T07:23:53Z",
+          "updatedAt": "2023-10-19T07:23:54Z",
+          "comments": [
+            {
+              "originalPosition": 23,
+              "body": "Good question. Actually, training is a universal phase that each AI model need to do, while inference is not. AI large model, in most cases refers to large language model, involves inference. But for some other AI models, like a model trained to categorize images, inference is not needed.",
+              "createdAt": "2023-10-19T07:23:53Z",
+              "updatedAt": "2023-10-19T07:23:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfPAms5kjFnt",
+          "commit": {
+            "abbreviatedOid": "2a8abf6"
+          },
+          "author": "QingAn",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-19T07:27:14Z",
+          "updatedAt": "2023-10-19T07:27:15Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "Sorry, typo, it should be \"mega-scale parameters\"",
+              "createdAt": "2023-10-19T07:27:15Z",
+              "updatedAt": "2023-10-19T07:27:15Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfPAms5ksjyh",
+          "commit": {
+            "abbreviatedOid": "2a8abf6"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-20T07:24:24Z",
+          "updatedAt": "2023-10-20T07:24:25Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "I would pick one of these and cite it.",
+              "createdAt": "2023-10-20T07:24:24Z",
+              "updatedAt": "2023-10-20T07:24:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfPAms5ksku4",
+          "commit": {
+            "abbreviatedOid": "2a8abf6"
+          },
+          "author": "boucadair",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-20T07:26:57Z",
+          "updatedAt": "2023-10-20T07:26:57Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "I saw the nit, but I don't see what is a \"mega-scale parameter\". I see what is a massive scale DC, data, etc. but not sure what these parameters are.  ",
+              "createdAt": "2023-10-20T07:26:57Z",
+              "updatedAt": "2023-10-20T07:26:58Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfPAms5ktTo8",
+          "commit": {
+            "abbreviatedOid": "2a8abf6"
+          },
+          "author": "VMatrix1900",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-20T09:11:18Z",
+          "updatedAt": "2023-10-20T09:11:18Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "From [ourworldindata](https://ourworldindata.org/grapher/artificial-intelligence-parameter-count#:~:text=Parameters%20are%20variables%20in%20an,in%20an%20artificial%20neural%20network.):\r\n`Parameters are variables in an AI system whose values areadjusted during training to establish how input data get stransformed into the desired output.`\r\n\r\nWhen training, the parameter is loaded into the GPU memory. So more parameters requires more GPUs to train it. \r\n\r\nCan we give a number for mega-scale parameter? For example, billion/trillion? Or how much resource it takes to train it.",
+              "createdAt": "2023-10-20T09:11:18Z",
+              "updatedAt": "2023-10-20T09:11:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfPAms5ktYq4",
+          "commit": {
+            "abbreviatedOid": "2a8abf6"
+          },
+          "author": "VMatrix1900",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-20T09:23:07Z",
+          "updatedAt": "2023-10-20T09:23:07Z",
+          "comments": [
+            {
+              "originalPosition": 23,
+              "body": "I am not sure about that. From [Google AI model inference](https://www.google.com/search?q=ai+model+inference):\r\n`Machine learning inference is the process of running live data into a machine learning algorithm to calculate output such as a single numerical score.`\r\n\r\nIt seems categorize images is also inference.\r\n\r\nMaybe the difference between the large model and traditional ai model is that it can generate a lot of content(so called AIGC: AI Generated Content). But I am not sure about what the difference it makes related to CATS.",
+              "createdAt": "2023-10-20T09:23:07Z",
+              "updatedAt": "2023-10-20T09:23:07Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfPAms5ktrvK",
+          "commit": {
+            "abbreviatedOid": "2a8abf6"
+          },
+          "author": "QingAn",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-20T10:09:20Z",
+          "updatedAt": "2023-10-20T10:09:20Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "Done. Please take a look",
+              "createdAt": "2023-10-20T10:09:20Z",
+              "updatedAt": "2023-10-20T10:09:21Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfPAms5kttFl",
+          "commit": {
+            "abbreviatedOid": "2a8abf6"
+          },
+          "author": "QingAn",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-20T10:12:57Z",
+          "updatedAt": "2023-10-20T10:12:57Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "This [link](https://infohub.delltechnologies.com/l/generative-ai-in-the-enterprise/large-model-training/#:~:text=Large%20generative%20AI%20models%20have,single%20NVIDIA%20Tesla%20V100%20GPU.) gives an example.\r\n\r\nLarge generative AI models have significant compute requirements for training. According to OpenAI, for Chat GPT-3 with 175B parameters, the model size is approximately 350 GB, and it would take 355 years to train GPT-3 on a single NVIDIA Tesla V100 GPU.\r\n\r\nSo, is it ok to change to \"AI foundation model usually involve billions of parameters\"?",
+              "createdAt": "2023-10-20T10:12:57Z",
+              "updatedAt": "2023-10-20T10:12:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfPAms5kt3-c",
+          "commit": {
+            "abbreviatedOid": "2a8abf6"
+          },
+          "author": "QingAn",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-20T10:34:37Z",
+          "updatedAt": "2023-10-20T10:34:37Z",
+          "comments": [
+            {
+              "originalPosition": 23,
+              "body": "By looking at different citations, I think this one from [xilinx](https://www.xilinx.com/applications/ai-inference/difference-between-deep-learning-training-and-inference.html#:~:text=Machine%20learning%20inference%20is%20the,sort%20different%20fruits%20by%20color.) is worth consideration\r\n\r\nMachine learning inference is the ability of a system to make predictions from novel data.\r\n\r\nSo, in this case, I agree classifying images is an inference, since a machine learning model trained to classify images of cats and dogs can be used to infer whether a new image is of a cat or a dog.\r\n\r\nAnd so, inference can be a common ability of AI models.\r\n\r\n> Maybe the difference between the large model and traditional ai model is that it can generate a lot of content(so called AIGC: AI Generated Content).\r\n\r\nIn my view, why AI large model has billions of parameters is because it deals with natural languages.\r\n\r\n> But I am not sure about what the difference it makes related to CATS.\r\n\r\nI think if an AI large model aims to generate images or videos, then it will often bring on high demand on network resource and computing resource, which is the area related to CATS.",
+              "createdAt": "2023-10-20T10:34:37Z",
+              "updatedAt": "2023-10-20T10:34:37Z"
+            }
+          ]
         }
       ]
     },
@@ -220,13 +474,13 @@
       "labels": [],
       "body": "Update Introduction, Terminologies and part of requirements. 1)The introduction part has been rewritten to avoid some verbose description. 2)Recent update on the definition of service related terms has been added into the Terminology part, as well as the definition on \"network edge\" and \"edge computing\", in order to make clarification. 3)Requirements on \"service instance selection\" have been adjusted. 4)Some vague expressions like\"quickly select\" and \"flexible use\" have been modified or explained. 5)Requirement on \"metric collection\" has been added. 6)Requirements on \"Session and service continuity\" have been modified.",
       "createdAt": "2023-10-16T14:44:46Z",
-      "updatedAt": "2023-10-18T18:34:56Z",
+      "updatedAt": "2023-10-19T03:31:05Z",
       "baseRepository": "cats-wg/draft-ietf-cats-usecases-requirements",
       "baseRefName": "main",
       "baseRefOid": "17811e95cd6e130e93ad3bd4daf553721947696f",
       "headRepository": "bpatient78/draft-ietf-cats-usecases-requirements",
       "headRefName": "patch-2",
-      "headRefOid": "ef6050ad524e9df3e5557d4fb29dbef4ac73eba3",
+      "headRefOid": "0ec85390c8b1617723aee07a41528ed1ab93916c",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -659,6 +913,26 @@
               "body": "> If both service instance and service contact instance exist, from my understanding, service instance is not a very useful concept. In the document, there are a number of occurences of \"selection of service or service selection\" here and there. After introducing service contact instance, which is selected, service instance or service contact instance? More like service contact instance to me.\r\n\r\nAgree. service instance should be used in very few occurrences; what matters is the service contact instance. \r\n",
               "createdAt": "2023-10-18T18:34:34Z",
               "updatedAt": "2023-10-18T18:34:34Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKfPAms5kh2ka",
+          "commit": {
+            "abbreviatedOid": "0ec8539"
+          },
+          "author": "VMatrix1900",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-19T03:31:05Z",
+          "updatedAt": "2023-10-19T03:31:05Z",
+          "comments": [
+            {
+              "originalPosition": 63,
+              "body": "You are right.",
+              "createdAt": "2023-10-19T03:31:05Z",
+              "updatedAt": "2023-10-19T03:31:05Z"
             }
           ]
         }
